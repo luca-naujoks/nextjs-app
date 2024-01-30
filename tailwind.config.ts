@@ -13,8 +13,13 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      boxShadow: {
+        'fuchsia-bottom': '0 10px 15px -3px rgba(112, 26, 117, 0.5), 0 4px 6px -2px rgba(112, 26, 117, 0.05)',
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar-hide')
+  ],
 };
 export default config;
