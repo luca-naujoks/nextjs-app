@@ -24,12 +24,12 @@ export function Navigation() {
     ]
 
     return (
-        <div className="flex justify-between p-2 bg-black shadow-fuchsia-bottom">
+        <div className="flex justify-between h-16 p-2 bg-slate-950 shadow-fuchsia-bottom">
             <div className="flex items-center gap-2 cursor-pointer" onClick={() => router.push('/')}>
                 <Image src="/icon.png" width={25} height={10} alt="logo"/>
                 <span>Bobby68.de</span>
             </div>
-            <div className="flex gap-4">
+            <div className="flex gap-4 items-center">
                 {elements.map((element, index) => (
                     <div key={index}><Link href={element.link} className={`text-xl text-gray-200 font-semibold hover:text-fuchsia-700 ${pathname == element.link? "pointer-events-none text-gray-500": ""}`}>{element.name}</Link></div>
                 ))}
