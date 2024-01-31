@@ -5,9 +5,9 @@ export default function Layout({
   children: React.ReactNode
 }) {
   return (
-    <div className="h-screen w-screen">
+    <div className="">
       <Navigation />
-      <div className="p-2 ">
+      <div className="">
         {children}
       </div>
     </div>

@@ -46,7 +46,7 @@ export default function Home() {
         <div className="h-screen w-2/5 p-24 justify-center" id="welcome">
           <p className="text-5xl mt-12 text-gray-400">Welcome on</p>
           <p className="flex">
-            <span className="text-5xl mt-12 text-transparent">Welcome </span>
+            <span className="text-4xl mt-12 text-transparent">Wow a Secret</span>
             <span className="text-5xl text-fuchsia-900">
               <TypingText text="Bobby68.de" time={100} />
             </span>
@@ -97,7 +97,7 @@ export default function Home() {
                   <Image src={"/git.svg"} alt="git" width={50} height={50} />
                   <Image src={"/next.png"} alt="nextjs" width={50} height={50} />
                   <Image src={"/react.png"} alt="react" width={50} height={50} />
-                  <Image src={"/tailwindcss.svg"} alt="tailwindcss" width={50} height={32} />
+                  <Image src={"/tailwindcss.svg"} alt="tailwindcss" width={50} height={50} />
                 </div>
               </div>
 
