@@ -78,7 +78,7 @@ export default function Home() {
                 <p>Specialist for system integration</p>
               </ProjectDetails>
               <ProjectDetails label="GitHub Profile:" className="mt-6">
-                <Link href={"https://github.com/luca-naujoks"} target="_blank">luca-naujoks</Link>
+                <Link href={"https://github.com/luca-naujoks"} target="_blank" className="hover:opacity-50">luca-naujoks</Link>
               </ProjectDetails>
               <ProjectDetails label="Fields of Interests:" className="mt-6">
                 <p>Artificial Intelligence,</p>

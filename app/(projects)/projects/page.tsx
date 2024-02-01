@@ -19,7 +19,7 @@ export default function Home() {
   return (
     <div className="">
       <h1 className="text-center font-semibold text-2xl text-gray-400 mt-4">My Projects & Contributions</h1>
-      <div id="project_container" className="grid grid-cols-2">
+      <div id="project_container" className="grid grid-cols-2 gap-6 mx-6">
 
         <ul id="left-lane">
           <li><ProjectCard projectTitle="LUNA AI">

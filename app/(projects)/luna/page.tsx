@@ -12,7 +12,6 @@ export default function Home() {
                 </ProjectCard>
             </div>
             <div className='w-1/2'>
-
             </div>
         </div>
     );
