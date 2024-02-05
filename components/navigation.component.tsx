@@ -27,7 +27,7 @@ export function Navigation() {
         <div className="flex justify-between h-16 p-2 bg-slate-950 shadow-fuchsia-bottom">
             <div className="flex items-center gap-2 cursor-pointer" onClick={() => router.push('/')}>
                 <Image src="/icon.png" width={25} height={10} alt="logo"/>
-                <span>Bobby68.de</span>
+                <span className="font-semibold">Bobby68.de</span>
             </div>
             <div className="flex gap-4 items-center">
                 {elements.map((element, index) => (

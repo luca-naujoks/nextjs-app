@@ -19,7 +19,7 @@ export default function Home() {
   return (
     <div className="">
       <h1 className="text-center font-semibold text-2xl text-gray-400 mt-4">My Projects & Contributions</h1>
-      <div id="project_container" className="grid grid-cols-2">
+      <div id="project_container" className="grid grid-cols-2 gap-6 mx-6">
 
         <ul id="left-lane">
           <li><ProjectCard projectTitle="LUNA AI">
@@ -98,7 +98,7 @@ export default function Home() {
               <p>Marketplace Platform</p>
             </ProjectDetail>
             <ProjectDetail label="Project Description" className="mb-6">
-              <p>The marketplace platform is a cross between Amazon, Fiverr and Etsy. It is a buy and sell platform where anyone can register for a 'business account' and sell items.</p>
+              <p>The marketplace platform is a cross between Amazon, Fiverr and Etsy. It is a buy and sell platform where anyone can register for a &apos;business account&apos; and sell items.</p>
             </ProjectDetail>
             <ProjectDetail label="GitHub Repositorys:" className="mb-6">
               <Link href={"https://github.com/luca-naujoks/Marketplace"} target="_blank" className="hover:opacity-50">Marketplace Platform</Link>
