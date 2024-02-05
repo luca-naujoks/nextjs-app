@@ -3,7 +3,7 @@
 import { TypingText } from "@/components/writing.component";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from 'next/navigation'
+import { useRouter } from 'next/navigation';
 import { useEffect, useState } from "react";
 
 interface ProjectDetailProps {
@@ -20,7 +20,7 @@ export default function Home() {
 
   const age = Math.floor(
     (new Date().getTime() - new Date("2005-06-08").getTime()) /
-      (1000 * 60 * 60 * 24 * 365.25)
+    (1000 * 60 * 60 * 24 * 365.25)
   );
 
   const ProjectDetails = ({ label, children, className }: ProjectDetailProps) => (
@@ -122,7 +122,7 @@ export default function Home() {
                   <p className="text-red-800">No</p>
                 </ProjectDetails>
                 <p className="text-gray-400">Model Description: </p>
-                <p className="max-w-1/3 text-wrap">LUNA is an LLM-based personal assistant with basic language understanding to perform "question" "answer" tasks.</p>
+                <p className="max-w-1/3 text-wrap">LUNA is an LLM-based personal assistant with basic language understanding to perform &quot;question&quot; &quot;answer&quot; tasks.</p>
               </div>
             </div>
           </div>

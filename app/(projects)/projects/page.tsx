@@ -98,7 +98,7 @@ export default function Home() {
               <p>Marketplace Platform</p>
             </ProjectDetail>
             <ProjectDetail label="Project Description" className="mb-6">
-              <p>The marketplace platform is a cross between Amazon, Fiverr and Etsy. It is a buy and sell platform where anyone can register for a 'business account' and sell items.</p>
+              <p>The marketplace platform is a cross between Amazon, Fiverr and Etsy. It is a buy and sell platform where anyone can register for a &apos;business account&apos; and sell items.</p>
             </ProjectDetail>
             <ProjectDetail label="GitHub Repositorys:" className="mb-6">
               <Link href={"https://github.com/luca-naujoks/Marketplace"} target="_blank" className="hover:opacity-50">Marketplace Platform</Link>
