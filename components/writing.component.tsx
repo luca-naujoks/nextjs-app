@@ -12,7 +12,7 @@ export const TypingText = ({ text, time }: { text: string, time: number }) => {
             }
         }, time);
         return () => clearTimeout(timeout);
-    }, [textIndex]);
+    }, [textIndex, text.length, time]);
 
     return (
         <span className="typing-text font-mono leading-tight {color} {size}">
