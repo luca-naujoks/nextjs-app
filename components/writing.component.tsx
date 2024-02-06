@@ -20,5 +20,3 @@ export const TypingText = ({ text, time }: { text: string, time: number }) => {
         </span>
     );
 }
-
-    ;

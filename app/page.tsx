@@ -3,7 +3,7 @@
 import { TypingText } from "@/components/writing.component";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from 'next/navigation'
+import { useRouter } from 'next/navigation';
 import { useEffect, useState } from "react";
 
 interface ProjectDetailProps {
@@ -20,7 +20,7 @@ export default function Home() {
 
   const age = Math.floor(
     (new Date().getTime() - new Date("2005-06-08").getTime()) /
-      (1000 * 60 * 60 * 24 * 365.25)
+    (1000 * 60 * 60 * 24 * 365.25)
   );
 
   const ProjectDetails = ({ label, children, className }: ProjectDetailProps) => (
@@ -78,7 +78,7 @@ export default function Home() {
                 <p>Specialist for system integration</p>
               </ProjectDetails>
               <ProjectDetails label="GitHub Profile:" className="mt-6">
-                <Link href={"https://github.com/luca-naujoks"} target="_blank">luca-naujoks</Link>
+                <Link href={"https://github.com/luca-naujoks"} target="_blank" className="hover:opacity-50">luca-naujoks</Link>
               </ProjectDetails>
               <ProjectDetails label="Fields of Interests:" className="mt-6">
                 <p>Artificial Intelligence,</p>
@@ -113,7 +113,7 @@ export default function Home() {
                   <p>LUNA</p>
                 </ProjectDetails>
                 <ProjectDetails label="Trained On:" className="mt-6">
-                  <p>General Chatting</p>
+                  <p>General Chat & Personal Assistance</p>
                 </ProjectDetails>
                 <ProjectDetails label="Last Update:" className="mt-6">
                   <p>27.08.2023</p>
