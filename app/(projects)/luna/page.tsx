@@ -28,39 +28,39 @@ export default function Home() {
             <div className='w-1/2 ml-12'>
                 <ProjectCard projectTitle='LUNA AI'>
                     <div className='ml-4'>
-                    <ProjectDetail label="Model Name:">
-                        <p>LUNA Core</p>
-                    </ProjectDetail>
-                    <ProjectDetail label="Trained On:">
-                        <p>Personal Assistance,</p>
-                        <p>Modular expandability</p>
-                    </ProjectDetail>
-                    <ProjectDetail label="Last Updated:">
-                        <p>06.02.2024</p>
-                    </ProjectDetail>
-                    <ProjectDetail label="Includes as Module:">
-                        <p>LUNA Gaming Model</p>
-                    </ProjectDetail>
-                    <ProjectDetail label="Interaction:">
-                        <p className='mb-12'>Through system integration</p>
-                    </ProjectDetail>
+                        <ProjectDetail label="Model Name:">
+                            <p>LUNA Core</p>
+                        </ProjectDetail>
+                        <ProjectDetail label="Trained On:">
+                            <p>Personal Assistance,</p>
+                            <p>Modular expandability</p>
+                        </ProjectDetail>
+                        <ProjectDetail label="Last Updated:">
+                            <p>06.02.2024</p>
+                        </ProjectDetail>
+                        <ProjectDetail label="Includes as Module:">
+                            <p>LUNA Gaming Model</p>
+                        </ProjectDetail>
+                        <ProjectDetail label="Interaction:">
+                            <p className='mb-12'>Through system integration</p>
+                        </ProjectDetail>
 
-                    <ProjectDetail label="Model Name:">
-                        <p>LUNA Gaming Model</p>
-                    </ProjectDetail>
-                    <ProjectDetail label="Trained On:">
-                        <p>Minecraft</p>
-                        <p>Oxygen Not Included</p>
-                        <p>AmongUs</p>
-                        <p>Raft</p>
-                        <p>Cyberpunk 2077 (just informations)</p>
-                    </ProjectDetail>
-                    <ProjectDetail label="Last Updated:">
-                        <p>06.02.2024</p>
-                    </ProjectDetail>
-                    <ProjectDetail label="Gameplay Interactions:">
-                        <p className='mb-6'>Through system integration via Software</p>
-                    </ProjectDetail>
+                        <ProjectDetail label="Model Name:">
+                            <p>LUNA Gaming Model</p>
+                        </ProjectDetail>
+                        <ProjectDetail label="Trained On:">
+                            <p>Minecraft</p>
+                            <p>Oxygen Not Included</p>
+                            <p>AmongUs</p>
+                            <p>Raft</p>
+                            <p>Cyberpunk 2077 (just informations)</p>
+                        </ProjectDetail>
+                        <ProjectDetail label="Last Updated:">
+                            <p>06.02.2024</p>
+                        </ProjectDetail>
+                        <ProjectDetail label="Gameplay Interactions:">
+                            <p className='mb-6'>Through system integration via Software</p>
+                        </ProjectDetail>
                     </div>
 
                 </ProjectCard>

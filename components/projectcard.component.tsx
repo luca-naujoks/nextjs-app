@@ -3,12 +3,12 @@ interface ProjectCardProps {
     projectTitle: string
     className?: string
 }
-    
+
 interface ProjectDetailProps {
     label: string;
     children: React.ReactNode;
     className?: string;
-  }
+}
 
 export const ProjectCard = ({ children, projectTitle, className }: ProjectCardProps) => {
     return (
@@ -28,7 +28,7 @@ export const ProjectCard = ({ children, projectTitle, className }: ProjectCardPr
 
 export const ProjectDetail = ({ label, children, className }: ProjectDetailProps) => (
     <div className={`flex mb-2 ${className}`}>
-      <div className="w-2/5 text-gray-400">{label}</div>
-      <div className="w-3/5">{children}</div>
+        <div className="w-2/5 text-gray-400">{label}</div>
+        <div className="w-3/5">{children}</div>
     </div>
-  );
+);

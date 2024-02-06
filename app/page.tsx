@@ -46,7 +46,7 @@ export default function Home() {
         <div className="h-screen w-2/5 p-24 justify-center" id="welcome">
           <p className="text-5xl mt-12 text-gray-400">Welcome on</p>
           <p className="flex">
-            <span className="text-4xl mt-12 text-transparent">Wow a Secret</span>
+            <span className="text-4xl mt-12 text-transparent cursor-default select-none">Wow a Secret</span>
             <span className="text-5xl text-fuchsia-900">
               <TypingText text="Bobby68.de" time={100} />
             </span>
