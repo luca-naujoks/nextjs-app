@@ -122,7 +122,7 @@ export default function Home() {
                   <p className="text-red-800">No</p>
                 </ProjectDetails>
                 <p className="text-gray-400">Model Description: </p>
-                <p className="max-w-1/3 text-wrap">LUNA is an LLM-based personal assistant with basic language understanding to perform &quot;question&quot; &quot;answer&quot; tasks.</p>
+                <p className="max-w-1/3 text-wrap">LUNA is an LLM-based personal assistant with basic language understanding to perform &rdquo;question&rdquo; &rdquo;answer&rdquo; tasks.</p>
               </div>
             </div>
           </div>
