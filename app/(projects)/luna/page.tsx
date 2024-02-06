@@ -26,7 +26,7 @@ export default function Home() {
     return (
         <div className="flex flex-col-2 p-2">
             <div className='w-1/2 ml-12'>
-                <ProjectCard projectTitle='LUNA AI'>
+                <ProjectCard projectTitle='LUNA AI' scale={false}>
                     <div className='ml-4'>
                         <ProjectDetail label="Model Name:">
                             <p>LUNA Core</p>
