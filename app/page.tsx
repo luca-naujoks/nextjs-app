@@ -113,7 +113,7 @@ export default function Home() {
                   <p>LUNA</p>
                 </ProjectDetails>
                 <ProjectDetails label="Trained On:" className="mt-6">
-                  <p>General Chatting</p>
+                  <p>General Chat & Personal Assistance</p>
                 </ProjectDetails>
                 <ProjectDetails label="Last Update:" className="mt-6">
                   <p>27.08.2023</p>

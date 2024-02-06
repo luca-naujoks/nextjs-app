@@ -3,6 +3,12 @@ interface ProjectCardProps {
     projectTitle: string
 }
 
+interface ProjectDetailProps {
+    label: string;
+    children: React.ReactNode;
+    className?: string;
+  }
+
 export const ProjectCard = ({ children, projectTitle }: ProjectCardProps) => {
     return (
         <div id="main_card" className="h-fit w-fill mt-8 z-10 duration-300 hover:shadow-[0_35px_60px_-15px_rgba(112,26,117,0.3)]">
@@ -18,3 +24,10 @@ export const ProjectCard = ({ children, projectTitle }: ProjectCardProps) => {
         </div>
     )
 }
+
+export const ProjectDetail = ({ label, children, className }: ProjectDetailProps) => (
+    <div className={`flex mb-2 ${className}`}>
+      <div className="w-2/5 text-gray-400">{label}</div>
+      <div className="w-3/5">{children}</div>
+    </div>
+  );

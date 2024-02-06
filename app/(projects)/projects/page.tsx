@@ -1,20 +1,9 @@
-import { ProjectCard } from "@/components/projectcard.component";
+import { ProjectCard, ProjectDetail } from "@/components/projectcard.component";
 import Link from "next/link";
 
-interface ProjectDetailProps {
-  label: string;
-  children: React.ReactNode;
-  className?: string;
-}
+
 
 export default function Home() {
-
-  const ProjectDetail = ({ label, children, className }: ProjectDetailProps) => (
-    <div className={`flex mb-2 ${className}`}>
-      <div className="w-2/5 text-gray-400">{label}</div>
-      <div className="w-3/5">{children}</div>
-    </div>
-  );
 
   return (
     <div className="">
