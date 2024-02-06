@@ -11,7 +11,7 @@ export default function Home() {
       <div id="project_container" className="grid grid-cols-2 gap-6 mx-6">
 
         <ul id="left-lane">
-          <li><ProjectCard projectTitle="LUNA AI">
+          <li><ProjectCard projectTitle="LUNA AI" scale={true}>
             <ProjectDetail label="Model Name">
               <p>LUNA</p>
             </ProjectDetail>
@@ -32,7 +32,7 @@ export default function Home() {
             </ProjectDetail>
 
           </ProjectCard></li>
-          <li><ProjectCard projectTitle="Bobby69">
+          <li><ProjectCard projectTitle="Bobby69" scale={true}>
             <ProjectDetail label="Project Name:" className="">
               <p>BobbyBot</p>
             </ProjectDetail>
@@ -52,7 +52,7 @@ export default function Home() {
               <p>Clear (clear multiple messages at once)</p>
             </ProjectDetail>
           </ProjectCard></li>
-          <li><ProjectCard projectTitle="Lets Tinker">
+          <li><ProjectCard projectTitle="Lets Tinker" scale={true}>
             <ProjectDetail label="Project Name:" className="">
               <p>Let us Tinker</p>
             </ProjectDetail>
@@ -65,7 +65,7 @@ export default function Home() {
           </ProjectCard></li>
         </ul>
         <ul>
-          <li><ProjectCard projectTitle="Chirp">
+          <li><ProjectCard projectTitle="Chirp" scale={true}>
             <ProjectDetail label="Project Name:" className="">
               <p>Chirp Messenger</p>
             </ProjectDetail>
@@ -82,7 +82,7 @@ export default function Home() {
               <p>Luca Naujoks</p>
             </ProjectDetail>
           </ProjectCard></li>
-          <li><ProjectCard projectTitle="Marketplace">
+          <li><ProjectCard projectTitle="Marketplace" scale={true}>
             <ProjectDetail label="Project Name:" className="">
               <p>Marketplace Platform</p>
             </ProjectDetail>
