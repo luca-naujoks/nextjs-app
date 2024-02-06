@@ -78,10 +78,10 @@ export default function Home() {
                         <p>Hi LUNA, are you familiar with Cyberpunk 2077?</p>
                     </MessageWrapper>
                     <MessageWrapper type='ai'>
-                        <p>Yes, it's an open-world, Cyber, action-adventure game.</p>
+                        <p>Yes, it&apos;s an open-world, Cyber, action-adventure game.</p>
                     </MessageWrapper>
                     <MessageWrapper type='user'>
-                        <p>Any tips for the "Down on the Street" mission?</p>
+                        <p>Any tips for the &quot;Down on the Street&quot; mission?</p>
                     </MessageWrapper>
                     <MessageWrapper type='ai'>
                         <p>Use a variety of weapons, explore for items and choose your dialogues wisely.</p>
@@ -90,7 +90,7 @@ export default function Home() {
                         <p>Where can I find the Sandevistan that David uses in the game?</p>
                     </MessageWrapper>
                     <MessageWrapper type='ai'>
-                        <p>It's available at every Ripperdoc in Night City in a variety of versions and variations.</p>
+                        <p>It&apos;s available at every Ripperdoc in Night City in a variety of versions and variations.</p>
                     </MessageWrapper>
                 </div>
             </div>
