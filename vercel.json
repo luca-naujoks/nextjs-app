@@ -1,9 +1,9 @@
 {
     "github": {
-      "enabled": false
+      "enabled": true
     },
     "git": {
-      "enabled": false
+      "enabled": true
     },
     "preview": {
       "github": {
