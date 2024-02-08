@@ -6,7 +6,7 @@ export async function POST(request: NextRequest) {
   const body = await request.json();
   const paswd = body.password
 
-  if (paswd == dotenv.config().parsed?.DEVELOPMENT_PASSWORD) {
+  if (paswd == process.env.DEVELOPMENT_PASSWORD) {
     const response = NextResponse.json({ message: 'Authorized' }, {status: 200});
     response.headers.append('Set-Cookie', serialize('auth', 'true', {
       httpOnly: false,
