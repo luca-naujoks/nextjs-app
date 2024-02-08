@@ -16,7 +16,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const Layout = process.env.NODE_ENV === "development"? DevLayout : ProdLayout;
+  const Layout = (process.env.VERCEL_ENV === "development" || process.env.VERCEL_ENV === "preview")? DevLayout : ProdLayout;
 
   return (
     <Layout>
