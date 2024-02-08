@@ -1,29 +1,3 @@
 {
-    "github": {
-      "enabled": false
-    },
-    "git": {
-      "enabled": false
-    },
-    "preview": {
-      "github": {
-        "enabled": true,
-        "include": ["development"]
-      },
-      "git": {
-        "enabled": true,
-        "include": ["development"]
-      }
-    },
-    "production": {
-      "github": {
-        "enabled": true,
-        "include": ["production"]
-      },
-      "git": {
-        "enabled": true,
-        "include": ["production"]
-      }
-    }
-  }
   
+}
