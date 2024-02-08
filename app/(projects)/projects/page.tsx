@@ -6,9 +6,9 @@ import Link from "next/link";
 export default function Home() {
 
   return (
-    <div className="">
+    <div className="pb-12">
       <h1 className="text-center font-semibold text-2xl text-gray-400 mt-4">My Projects & Contributions</h1>
-      <div id="project_container" className="grid grid-cols-2 gap-6 mx-6">
+      <div id="project_container" className="grid grid-cols-2 gap-12 mx-12">
 
         <ul id="left-lane">
           <li><ProjectCard projectTitle="LUNA AI" scale={true}>
