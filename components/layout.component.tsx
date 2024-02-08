@@ -27,9 +27,9 @@ export function DevLayout({
     return (
       <html lang="en">
         <body className="inter bg-slate-950">
-          <main className="text-fuchsia-700 min-h-screen">
+          <main className="flex justify-center items-center text-fuchsia-700 min-h-screen">
             {/* You can replace this with a loading spinner or any other placeholder */}
-            <p>Loading...</p>
+            <p className="text-3xl">Loading...</p>
           </main>
         </body>
       </html>

@@ -100,7 +100,6 @@ export default function Home() {
                   <Image src={"/tailwindcss.svg"} alt="tailwindcss" width={50} height={50} />
                 </div>
               </div>
-
             </div>
           </div>
 
@@ -113,7 +112,7 @@ export default function Home() {
                   <p>LUNA</p>
                 </ProjectDetails>
                 <ProjectDetails label="Trained On:" className="mt-6">
-                  <p>General Chat & Personal Assistance</p>
+                  <p className="text-wrap">General Chat & Personal Assistance</p>
                 </ProjectDetails>
                 <ProjectDetails label="Last Update:" className="mt-6">
                   <p>27.08.2023</p>
