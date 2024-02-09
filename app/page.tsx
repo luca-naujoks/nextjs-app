@@ -92,12 +92,24 @@ export default function Home() {
               <div>
                 <p className="w-2/5 text-gray-400 mt-6 mb-2">My Tools:</p>
                 <div className="flex gap-4 w-full">
-                  <Image src={"/vscode.svg"} alt="vscode" width={50} height={50} />
+                  <div className="relative w-1/12">
+                    <Image src={"/vscode.svg"} alt="vscode" fill />
+                  </div>
+                  <div className="relative w-1/12">
                   <Image src={"/docker.svg"} alt="docker" width={50} height={50} />
+                  </div>
+                  <div className="relative w-1/12">
                   <Image src={"/git.svg"} alt="git" width={50} height={50} />
+                  </div>
+                  <div className="relative w-1/12">
                   <Image src={"/next.png"} alt="nextjs" width={50} height={50} />
+                  </div>
+                  <div className="relative w-1/12">
                   <Image src={"/react.png"} alt="react" width={50} height={50} />
+                  </div>
+                  <div className="relative w-1/12">
                   <Image src={"/tailwindcss.svg"} alt="tailwindcss" width={50} height={50} />
+                  </div>
                 </div>
               </div>
 
