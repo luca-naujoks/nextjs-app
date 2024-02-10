@@ -8,6 +8,18 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      animation: {
+        bounce200: 'bounce 1s infinite 200ms',
+        bounce400: 'bounce 1s infinite 400ms',
+        bounce600: 'bounce 1s infinite 600ms',
+        bounce800: 'bounce 1s infinite 800ms',
+      },
+      keyframes: {
+        bounce: {
+          '0%, 100%': { transform: 'translateY(30%)' },
+          '50%': { transform: 'translateY(0)' },
+        },
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

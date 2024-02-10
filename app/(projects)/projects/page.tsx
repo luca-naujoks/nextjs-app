@@ -1,28 +1,17 @@
-import { ProjectCard } from "@/components/projectcard.component";
+import { ProjectCard, ProjectDetail } from "@/components/projectcard.component";
 import Link from "next/link";
 
-interface ProjectDetailProps {
-  label: string;
-  children: React.ReactNode;
-  className?: string;
-}
+
 
 export default function Home() {
 
-  const ProjectDetail = ({ label, children, className }: ProjectDetailProps) => (
-    <div className={`flex mb-2 ${className}`}>
-      <div className="w-2/5 text-gray-400">{label}</div>
-      <div className="w-3/5">{children}</div>
-    </div>
-  );
-
   return (
-    <div className="">
+    <div className="pb-12">
       <h1 className="text-center font-semibold text-2xl text-gray-400 mt-4">My Projects & Contributions</h1>
-      <div id="project_container" className="grid grid-cols-2 gap-6 mx-6">
+      <div id="project_container" className="grid grid-cols-2 gap-12 mx-12">
 
         <ul id="left-lane">
-          <li><ProjectCard projectTitle="LUNA AI">
+          <li><ProjectCard projectTitle="LUNA AI" scale={true}>
             <ProjectDetail label="Model Name">
               <p>LUNA</p>
             </ProjectDetail>
@@ -43,7 +32,7 @@ export default function Home() {
             </ProjectDetail>
 
           </ProjectCard></li>
-          <li><ProjectCard projectTitle="Bobby69">
+          <li><ProjectCard projectTitle="Bobby69" scale={true}>
             <ProjectDetail label="Project Name:" className="">
               <p>BobbyBot</p>
             </ProjectDetail>
@@ -63,7 +52,7 @@ export default function Home() {
               <p>Clear (clear multiple messages at once)</p>
             </ProjectDetail>
           </ProjectCard></li>
-          <li><ProjectCard projectTitle="Lets Tinker">
+          <li><ProjectCard projectTitle="Lets Tinker" scale={true}>
             <ProjectDetail label="Project Name:" className="">
               <p>Let us Tinker</p>
             </ProjectDetail>
@@ -76,7 +65,7 @@ export default function Home() {
           </ProjectCard></li>
         </ul>
         <ul>
-          <li><ProjectCard projectTitle="Chirp">
+          <li><ProjectCard projectTitle="Chirp" scale={true}>
             <ProjectDetail label="Project Name:" className="">
               <p>Chirp Messenger</p>
             </ProjectDetail>
@@ -93,7 +82,7 @@ export default function Home() {
               <p>Luca Naujoks</p>
             </ProjectDetail>
           </ProjectCard></li>
-          <li><ProjectCard projectTitle="Marketplace">
+          <li><ProjectCard projectTitle="Marketplace" scale={true}>
             <ProjectDetail label="Project Name:" className="">
               <p>Marketplace Platform</p>
             </ProjectDetail>

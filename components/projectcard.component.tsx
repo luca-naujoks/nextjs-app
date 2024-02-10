@@ -1,11 +1,19 @@
 interface ProjectCardProps {
     children: React.ReactNode;
     projectTitle: string
+    scale: boolean
+    className?: string
 }
 
-export const ProjectCard = ({ children, projectTitle }: ProjectCardProps) => {
+interface ProjectDetailProps {
+    label: string;
+    children: React.ReactNode;
+    className?: string;
+}
+
+export const ProjectCard = ({ children, projectTitle, className, scale }: ProjectCardProps) => {
     return (
-        <div id="main_card" className="h-fit w-fill mt-8 z-10 duration-300 hover:shadow-[0_35px_60px_-15px_rgba(112,26,117,0.3)]">
+        <div id="main_card" className={`h-fit mt-8 z-10 ${scale == true ? "hover:scale-105 duration-300 cursor-pointer" : ""} hover:shadow-[0_35px_60px_-15px_rgba(112,26,117,0.3)] ${className}`}>
             <div id="head" className="flex items-center pl-2 gap-1 border border-slate-500 bg-slate-900 w-full h-10 rounded-t-xl">
                 <div className="w-2.5 h-2.5 bg-slate-600 rounded-full" />
                 <div className="w-2.5 h-2.5 bg-slate-600 rounded-full" />
@@ -18,3 +26,10 @@ export const ProjectCard = ({ children, projectTitle }: ProjectCardProps) => {
         </div>
     )
 }
+
+export const ProjectDetail = ({ label, children, className }: ProjectDetailProps) => (
+    <div className={`flex mb-2 ${className}`}>
+        <div className="w-2/5 text-gray-400">{label}</div>
+        <div className="w-3/5">{children}</div>
+    </div>
+);
