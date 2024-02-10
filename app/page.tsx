@@ -43,25 +43,25 @@ export default function Home() {
   return (
     <div className="whitespace-nowrap overflow-auto scrollbar-hide">
       <div className="flex h-screen w-screen font-semibold" id="screen-1">
-        <div className="h-screen w-2/5 p-24 justify-center" id="welcome">
+        <div className="h-screen w-2/5 md:p-12 xl:p-24 justify-center" id="welcome">
           <p className="md:text-4xl xl:text-5xl mt-12 text-gray-400">Welcome on</p>
           <p className="flex">
-            <span className="md:text-2xl xl:text-4xl mt-12 text-transparent cursor-default select-none">Wow a Secret</span>
-            <span className="md:text-4xl xl:text-5xl text-fuchsia-900">
+            <span className="md:hidden xl:text-4xl mt-12 text-transparent cursor-default select-none">Wow a Secret</span>
+            <span className="md:text-4xl md:ml-4 xl:text-5xl text-fuchsia-900">
               <TypingText text="Bobby68.de" time={100} />
             </span>
           </p>
 
-          <div id="buttons" className="absolute w-2/5 h-fit bottom-24 flex flex-col gap-4 ">
-            <button className={`md:w-3/5 xl:w-2/5 h-12 ${gitmargin} bg-slate-900 font-bold text-fuchsia-900 rounded-md hover:scale-105 hover:shadow-[0_35px_60px_-15px_rgba(112,26,117,0.3)] duration-300`} onClick={() => router.push('https://github.com/luca-naujoks')}>My GitHub</button>
-            <button className="md:w-3/5 xl:w-2/5 h-12 bg-slate-900 font-bold text-fuchsia-900 rounded-md hover:scale-105 hover:shadow-[0_35px_60px_-15px_rgba(112,26,117,0.3)] duration-300" onClick={() => router.push('/luna')}>LUNA AI</button>
-            <button className="md:w-3/5 xl:w-2/5 h-12 bg-slate-900 font-bold text-fuchsia-900 rounded-md hover:scale-105 hover:shadow-[0_35px_60px_-15px_rgba(112,26,117,0.3)] duration-300" onClick={() => router.push('/projects')}>Projects</button>
+          <div id="buttons" className="absolute md:w-1/5 xl:w-2/5 h-fit bottom-24 flex flex-col gap-4">
+            <button className={`md:w-full xl:w-2/5 h-12 ${gitmargin} bg-slate-900 font-bold text-fuchsia-900 rounded-md hover:scale-105 hover:shadow-[0_35px_60px_-15px_rgba(112,26,117,0.3)] duration-300`} onClick={() => router.push('https://github.com/luca-naujoks')}>My GitHub</button>
+            <button className="md:w-full xl:w-2/5 h-12 bg-slate-900 font-bold text-fuchsia-900 rounded-md hover:scale-105 hover:shadow-[0_35px_60px_-15px_rgba(112,26,117,0.3)] duration-300" onClick={() => router.push('/luna')}>LUNA AI</button>
+            <button className="md:w-full xl:w-2/5 h-12 bg-slate-900 font-bold text-fuchsia-900 rounded-md hover:scale-105 hover:shadow-[0_35px_60px_-15px_rgba(112,26,117,0.3)] duration-300" onClick={() => router.push('/projects')}>Projects</button>
           </div>
         </div>
 
-        <div className={`${cardsScale} flex h-screen w-3/5 p-24 duration-300`}>
+        <div className={`${cardsScale} flex h-screen w-full md:px-12 md:py-24 xl:px-12 duration-300`}>
 
-          <div id="main_card" className="w-4/5 h-3/4 z-10 shadow-[0_35px_60px_-15px_rgba(112,26,117,0.3)]">
+          <div id="main_card" className="md:w-full xl:w-4/5 md:h-fit xl:h-3/4 z-10 shadow-[0_35px_60px_-15px_rgba(112,26,117,0.3)]">
             <div id="head" className="flex items-center pl-2 gap-1 border border-slate-500 bg-slate-900 w-full h-10 rounded-t-xl">
               <div className="w-2.5 h-2.5 bg-slate-600 rounded-full"></div>
               <div className="w-2.5 h-2.5 bg-slate-600 rounded-full"></div>
@@ -75,7 +75,7 @@ export default function Home() {
                 <p>{age}</p>
               </ProjectDetails>
               <ProjectDetails label="Current Job:" className="md:mt-4 xl:mt-6">
-                <p>Specialist for system integration</p>
+                <p className="text-wrap">Specialist for system integration</p>
               </ProjectDetails>
               <ProjectDetails label="GitHub Profile:" className="md:mt-4 xl:mt-6">
                 <Link href={"https://github.com/luca-naujoks"} target="_blank" className="hover:opacity-50">luca-naujoks</Link>
@@ -91,24 +91,24 @@ export default function Home() {
               </ProjectDetails>
               <div>
                 <p className="w-2/5 text-gray-400 mt-6 mb-2">My Tools:</p>
-                <div className="flex gap-4 w-full">
+                <div className="flex gap-4 w-full mb-6">
                   <div className="relative w-1/12">
-                    <Image src={"/vscode.svg"} alt="vscode" fill />
+                    <Image src={"/vscode.svg"} alt="vscode" width={50} height={50} />
                   </div>
                   <div className="relative w-1/12">
-                  <Image src={"/docker.svg"} alt="docker" width={50} height={50} />
+                    <Image src={"/docker.svg"} alt="docker" width={50} height={50} />
                   </div>
                   <div className="relative w-1/12">
-                  <Image src={"/git.svg"} alt="git" width={50} height={50} />
+                    <Image src={"/git.svg"} alt="git" width={50} height={50} />
                   </div>
                   <div className="relative w-1/12">
-                  <Image src={"/next.png"} alt="nextjs" width={50} height={50} />
+                    <Image src={"/next.png"} alt="nextjs" width={50} height={50} />
                   </div>
                   <div className="relative w-1/12">
-                  <Image src={"/react.png"} alt="react" width={50} height={50} />
+                    <Image src={"/react.png"} alt="react" width={50} height={50} />
                   </div>
                   <div className="relative w-1/12">
-                  <Image src={"/tailwindcss.svg"} alt="tailwindcss" width={50} height={50} />
+                    <Image src={"/tailwindcss.svg"} alt="tailwindcss" width={50} height={50} />
                   </div>
                 </div>
               </div>
