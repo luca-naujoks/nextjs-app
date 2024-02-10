@@ -24,8 +24,8 @@ const MessageWrapper = ({ children, type }: MessageWrapperProps) => {
 export default function Home() {
     const pathname = usePathname()
     return (
-        <div className="flex flex-col-2 p-2">
-            <div className='w-1/2 ml-12'>
+        <div className="flex md:flex-col xl:flex-col-2 p-2">
+            <div className='md:w-2/3 md:mx-auto xl:w-1/2 xl:ml-12'>
                 <ProjectCard projectTitle='LUNA AI' scale={false}>
                     <div className='ml-4'>
                         <ProjectDetail label="Model Name:">
@@ -66,7 +66,7 @@ export default function Home() {
                 </ProjectCard>
             </div>
 
-            <div id="example_chat" className="w-1/3 mx-auto mt-8 shadow-[0_35px_60px_-15px_rgba(112,26,117,0.3)]">
+            <div id="example_chat" className="md:w-2/3 xl:w-1/3 mx-auto mt-8 shadow-[0_35px_60px_-15px_rgba(112,26,117,0.3)]">
                 <div id="head" className="flex items-center pl-2 gap-1 border border-slate-500 bg-slate-900 w-full h-10 rounded-t-xl">
                     <div className="w-2.5 h-2.5 bg-slate-600 rounded-full"></div>
                     <div className="w-2.5 h-2.5 bg-slate-600 rounded-full"></div>

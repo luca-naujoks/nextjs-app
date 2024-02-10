@@ -45,7 +45,7 @@ export default function Login() {
                         <div className="w-2.5 h-2.5 bg-slate-600 rounded-full" />
                         <div className="w-2.5 h-2.5 bg-slate-600 rounded-full" />
                     </div>
-                    <h1 className="font-semibold text-xl text-gray-400">
+                    <h1 className="font-semibold md:text-md xl:text-xl text-gray-400">
                         Login to development
                     </h1>
                     <div className="flex gap-1">
