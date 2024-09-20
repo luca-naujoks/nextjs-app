@@ -1,6 +1,6 @@
 {
   "name": "nextjs-app",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -9,18 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "cookie": "^0.6.0",
     "dotenv": "^16.4.1",
-    "js-cookie": "^3.0.5",
     "next": "14.2.10",
     "react": "^18",
     "react-dom": "^18",
-    "sharp": "^0.33.2",
-    "tailwind-scrollbar-hide": "^1.1.7"
+    "sharp": "^0.33.2"
   },
   "devDependencies": {
-    "@types/cookie": "^0.6.0",
-    "@types/js-cookie": "^3.0.6",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
