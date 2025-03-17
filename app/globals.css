@@ -2,16 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-rgb: 243 244 246;
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-rgb));
-  font-family: 'Helvetica Neue', sans-serif;
-}
-
 @layer utilities {
+  .headline {
+    @apply text-xl font-semibold mb-4;
+  }
+  .projectName {
+    @apply font-semibold;
+  }
+  .projectDescription {
+    @apply max-w-full max-h-16 overflow-hidden text-ellipsis;
+  }
+  .buttonStyle {
+    @apply bg-white/50 backdrop-blur-md rounded-md px-4 py-1;
+  }
 }

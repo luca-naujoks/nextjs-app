@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -15,7 +14,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="inter">
-        <main>{children}</main>
+        <main
+          className="w-screen h-screen p-4"
+          style={{
+            backgroundImage: "url('/wallpaper.png')",
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+            backgroundAttachment: "fixed",
+            transition: "background-image 0.5s ease-in-out",
+          }}
+        >
+          {children}
+        </main>
       </body>
     </html>
   );
