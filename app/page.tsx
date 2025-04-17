@@ -1,41 +1,41 @@
-import { HeadLine, ProjectStackItem, TechStackItem } from "./utils/components";
-import Image from "next/image";
+import { Navigation } from "@/components/Navigation";
+import { PageHeadding } from "@/components/PageHeadding";
+import { TechStackCard } from "@/components/TechStackCard";
+import { links } from "@/lib/constants";
 
 export default function Home() {
   return (
-    <div className="flex flex-col w-full h-full p-4 bg-white/25 backdrop-blur-sm rounded-md">
-      <h1 className="headline">Welcome to my Web Space</h1>
-
-      <span className="mb-8">
-        Hey i am Luca a fullstack developer. Using a Tech Stack around Next-,
-        NestJS, SQL aswell as NoSQL Databases.
-      </span>
-
-      <h1 className="headline">My TechStack</h1>
-      <div id="techStack" className="grid grid-cols-3 gap-4 mb-8">
-        <TechStackItem name="Python" icon="/python.png" />
-        <TechStackItem name="React" icon="/react.png" />
-        <TechStackItem name="TypeScript" icon="/typescript.png" />
-        <TechStackItem name="SharePoint Framework" icon="/spfx.png" />
-        <TechStackItem name="SQLite" icon="/sql.png" />
-      </div>
-
-      <h1 className="headline">Some of my Side Projects</h1>
-      <div id="projects" className="grid grid-cols-1 gap-4">
-        <ProjectStackItem
-          name="My Website"
-          icon="/typescript.png"
-          description=""
-          state="in progress"
-          mainTechnology="JavaScript"
-        />
-        <ProjectStackItem
-          name="Observer"
-          icon="/typescript.png"
-          description="jfhshgfiuzgi nashudfahsuf as dhuad u udfh afua ua fuasf hu asjfhaufgsizf sgzf asgfug fuagfu ugasf uaszg fuag fuag "
-          state="in progress"
-          mainTechnology="JavaScript"
-        />
+    <div className="h-full flex flex-col px-12">
+      <Navigation links={links} />
+      <PageHeadding label="All around" />
+      <PageHeadding label="Development" />
+      <PageHeadding label="luca-naujoks" size="text-xl" />
+      <div
+        id="innerBody"
+        className="flex flex-col flex-grow lg:justify-between w-full bg-foreground mt-24 px-12 pt-12 rounded-t-xl bg-radial-[at_0%_0%] from-effect to-foreground to-50%"
+      >
+        <PageHeadding label="My Tech Stack" size="text-4xl" />
+        <div className="flex flex-col lg:flex-row justify-around lg:justify-between items-center lg:items-end w-full h-full mt-12 lg:mt-0 ">
+          <TechStackCard
+            label="Frontend"
+            listItems={[
+              "NextJS",
+              "React",
+              "TypeScript",
+              "Tailwindcss",
+              "SPFx",
+              "Docker",
+            ]}
+          />
+          <TechStackCard
+            label="Backend"
+            listItems={["NestJS", "TypeScript", "TypeOrm", "Docker"]}
+          />
+          <TechStackCard
+            label="Databases"
+            listItems={["SQLite", "PostgreSQL", "MongoDB", "neo4j"]}
+          />
+        </div>
       </div>
     </div>
   );

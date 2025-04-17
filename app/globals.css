@@ -1,18 +1,39 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-@layer utilities {
-  .headline {
-    @apply text-xl font-semibold mb-4;
+:root {
+  --background: #0a0a0a;
+  --foreground: #1c1c1f;
+  --effectcolor: #494951;
+  --textColor: #99a1af;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-effect: var(--effectcolor);
+  --color-text: var(--textColor);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #1c1c1f;
   }
-  .projectName {
-    @apply font-semibold;
+}
+
+body {
+  background: var(--background);
+  color: var(--textColor);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer components {
+  .containerHeadline {
+    @apply w-full text-center text-3xl font-semibold mt-2;
   }
-  .projectDescription {
-    @apply max-w-full max-h-16 overflow-hidden text-ellipsis;
-  }
-  .buttonStyle {
-    @apply bg-white/50 backdrop-blur-md rounded-md px-4 py-1;
+  .techStackItem {
+    @apply w-fit px-2 text-center text-xl border-2 border-effect rounded-md;
   }
 }

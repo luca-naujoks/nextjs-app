@@ -1,0 +1,7 @@
+{
+  "files.eol": "\n",
+  "search.useIgnoreFiles": false,
+  "files.associations": {
+    "*.css": "tailwindcss"
+  }
+}
