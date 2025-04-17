@@ -44,6 +44,7 @@ jobs:
           context: .
           push: true
           tags: |
+            type=raw,value=latest,enable=${{ github.ref == format('refs/heads/{0}', 'production') }}
             ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
