@@ -9,9 +9,9 @@ export default function Page() {
       <PageHeadding label="About Me" />
       <div
         id="innerBody"
-        className="flex flex-col lg:flex-row flex-grow w-full mt-24 px-12 bg-foreground bg-radial-[at_0%_0%] from-effect to-foreground to-50% rounded-t-xl"
+        className="flex flex-col lg:flex-row flex-grow w-full mt-24 bg-foreground bg-radial-[at_0%_0%] from-callToAction2 to-foreground to-40% rounded-t-xl"
       >
-        <div className="w-full lg:w-1/2 h-1/2 lg:h-full pt-8 px-4 border-b-2 lg:border-b-0 lg:border-r-2">
+        <div className="w-full lg:w-1/2 h-1/2 lg:h-full pt-8 px-12 border-b-2 lg:border-b-0 lg:border-r-2">
           <PageHeadding label="luca-naujoks" size="text-5xl" />
           <p className="pt-4 text-xl">
             Hi, I am luca, a full stack developer from Germany. <br />
@@ -28,16 +28,22 @@ export default function Page() {
             GitHub
           </p>
         </div>
-        <div className="w-full lg:w-1/2 h-1/2 lg:h-full pt-8 px-4">
-          <PageHeadding label="my hobbies" size="text-5xl" />
-          <p className="pt-4 text-xl">
-            Volunteer Firefighter:  I am a volunteer firefighter since 2017 and
-            mastered a good amount of calls and challenges with my team
-            <br />
-            <br />
-            Developer:  I started my career around 2019 with a friend developing
-            Discord bots with Python, and have grown in skill and
-            professionalism since then.
+        <div className="w-full lg:w-1/2 h-1/2 lg:h-full pt-8 px-12">
+          <PageHeadding label="my-hobbies" size="text-5xl" />
+          <h1 className="mt-4 text-callToAction2 text-xl font-semibold">
+            Volunteer Firefighter:
+          </h1>
+          <p className="text-xl">
+            I am a volunteer firefighter since 2017 and mastered a good amount
+            of calls and challenges with my team.
+          </p>
+          <h1 className="mt-4 text-callToAction2 text-xl font-semibold">
+            Developing:
+          </h1>
+          <p>
+            I started my career around 2019 with a friend developing Discord
+            bots with Python, and have grown in skill and professionalism since
+            then.
           </p>
         </div>
       </div>

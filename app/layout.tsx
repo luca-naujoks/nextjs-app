@@ -27,7 +27,7 @@ export default function RootLayout({
       <body
         className={`flex justify-center bg-background w-screen h-screen max-h-screen px-12 pt-12 ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="w-full h-full bg-foreground rounded-t-xl bg-radial-[at_90%_10%] from-effect to-foreground to-35%">
+        <div className="w-full h-full bg-foreground rounded-t-xl bg-radial-[at_90%_10%] from-callToAction to-foreground to-50%">
           {children}
         </div>
       </body>
