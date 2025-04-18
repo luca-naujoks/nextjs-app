@@ -10,7 +10,7 @@ export default function Page() {
       <PageHeadding label="My Projects" />
       <div
         id="innerBody"
-        className="flex flex-col flex-grow justify-between w-full bg-foreground mt-24 px-12 rounded-t-xl bg-radial-[at_0%_0%] from-effect to-foreground to-50%"
+        className="flex flex-col flex-grow justify-between w-full bg-foreground mt-24 px-12 rounded-t-xl bg-radial-[at_0%_0%] from-callToAction2 to-foreground to-50%"
       >
         <div className="flex flex-col lg:flex-row justify-around lg:justify-between lg:items-center w-full h-full overflow-scroll">
           <ProjectContainer
