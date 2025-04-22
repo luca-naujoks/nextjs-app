@@ -33,7 +33,11 @@ export function ProjectContainer({
       </div>
       <div className="mt-4">
         <h2 className="containerHeadline text-xl text-left">GitHub Link</h2>
-        <a href={githublink} className="text-effect hover:text-text underline">
+        <a
+          href={githublink}
+          target="_blank"
+          className="text-effect hover:text-text underline"
+        >
           here
         </a>
       </div>
