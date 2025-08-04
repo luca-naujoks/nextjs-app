@@ -1,8 +1,8 @@
-import { Ilink } from "@/components/Navigation";
+import {ILink} from "@/components/Navigation";
 
-export const links: Ilink[] = [
-  { label: "Home", to: "/" },
-  { label: "About Me", to: "/about-me" },
-  { label: "Projects", to: "/projects" },
-  { label: "Leave a Note", to: "/leave-a-note" },
+export const links: ILink[] = [
+    {Title: "Home", Link: "/"},
+    {Title: "About Me", Link: "/about-me"},
+    {Title: "Projects", Link: "/projects"},
+    {Title: "Leave a Note", Link: "/leave-a-note"},
 ];

@@ -1,27 +1,23 @@
-"use client";
+"use client"
+import {usePathname} from "next/navigation";
 
-import { usePathname } from "next/navigation";
-
-export interface Ilink {
-  label: string;
-  to: string;
+export interface ILink {
+    Link: string
+    Title: string
 }
-export function Navigation({ links }: { links: Ilink[] }) {
-  const path = usePathname();
 
-  return (
-    <div className="flex justify-center w-full mt-4 mb-4">
-      <div className="flex justify-between w-2/3 px-4 py-2 shadow-lg shadow-effect/75 rounded-lg">
-        {links.map((link) => (
-          <a
-            key={link.to}
-            href={link.to}
-            className={path == link.to ? "text-white" : "text-text"}
-          >
-            {link.label}
-          </a>
-        ))}
-      </div>
-    </div>
-  );
+export function Navigation({links}: { links: ILink[] }) {
+
+    const path = usePathname().slice(1)
+
+    return (
+        <div className={`flex gap-4 items-center justify-center w-full`}>
+            {links.map((link, index) => (
+                <div key={index}>
+                    <a href={link.Link}
+                       className={`${(path == link.Link || path == link.Link.slice(1)) ? "text-foreground font-bold underline underline-offset-4" : "text-background font-medium hover:underline underline-offset-4"}`}>{link.Title}</a>
+                </div>
+            ))}
+        </div>
+    )
 }

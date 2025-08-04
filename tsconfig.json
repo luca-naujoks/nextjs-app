@@ -27,7 +27,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "components/Navigation.tsx"
+    "components/InfoPanel.tsx"
   ],
   "exclude": ["node_modules"]
 }
