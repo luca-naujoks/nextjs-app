@@ -1,6 +1,7 @@
 export default function Page() {
     return (
-        <div className="h-full flex flex-col px-12">
+        <div className={`flex items-center justify-center w-full h-full bg-foreground/50`}>
+            <h1 className={`text-center`}> Sorry the current Selected Site<br/> at /projects is currently under construction</h1>
         </div>
     );
 }

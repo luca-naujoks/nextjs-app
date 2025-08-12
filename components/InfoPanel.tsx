@@ -16,20 +16,21 @@ export function InfoPanel() {
               height={64}
               style={{borderRadius: "50%"}}
               loading={"lazy"}
+              className={`w-6 h-6 2xl:w-16 2xl:h-16`}
           />
       <h1>luca-naujoks</h1>
       </span>
             <form
-                className={`flex flex-col justify-between w-full h-11/12 2xl:h-6/7 border-2 border-foreground bg-foreground/50 p-4 rounded-lg`}>
+                className={`flex flex-col justify-between w-full h-11/12 2xl:h-6/7 border-2 border-foreground bg-foreground/50 p-2 2xl:p-4 rounded-lg`}>
                 <h2>Software Integrator</h2>
 
                 <div className={"flex flex-col gap-2 2xl:gap-4"}>
-                    <Label htmlFor="gender" className={`font-semibold -mb-1`}>Gender</Label>
+                    <Label htmlFor="gender" className={`font-semibold -mb-1`}>Gender:</Label>
                     <SwitchButton leftLabel={"Male"} rightLabel={"Female"} disabled/>
                 </div>
 
                 <div className={"flex flex-col gap-2 2xl:gap-4"}>
-                    <Label htmlFor="age" className={`font-semibold -mb-1`}>Age</Label>
+                    <Label htmlFor="age" className={`font-semibold -mb-1`}>Age:</Label>
                     <div className={`flex gap-2`} id={`age`}>
                         20
                         <Slider defaultValue={[20]} max={92} step={1} className={``} disabled/>
@@ -37,13 +38,13 @@ export function InfoPanel() {
                     </div>
                 </div>
 
-                <div className={"flex flex-col gap-2 2xl:gap-4"}>
-                    <Label htmlFor="origin" className={`font-semibold -mb-1`}>Origin</Label>
-                    <Button id={`origin`} className={`w-fit bg-chart-4`} disabled>Germany</Button>
+                <div className={`flex-col gap-2 2xl:gap-4 hidden 2xl:flex`}>
+                    <Label htmlFor="origin" className={`font-semibold -mb-1`}>Origin:</Label>
+                    <Button id={`origin`} className={`w-fit h-8 bg-chart-4`} disabled>Germany</Button>
                 </div>
 
                 <div className={"flex flex-col gap-2 2xl:gap-4"}>
-                    <Label htmlFor="origin" className={`font-semibold -mb-1`}>Languages</Label>
+                    <Label htmlFor="origin" className={`font-semibold -mb-1`}>Languages:</Label>
                     <div className="flex items-center gap-3">
                         <Label htmlFor="german">German</Label>
                         <Checkbox id="german" checked aria-readonly/>
@@ -59,7 +60,7 @@ export function InfoPanel() {
                 </div>
 
                 <div className={"flex flex-col gap-2 2xl:gap-4"}>
-                    <Label className={`font-semibold -mb-1`}>Social Contacts</Label>
+                    <Label className={`font-semibold -mb-1`}>Social Contacts:</Label>
                     <a href={"https://github.com/luca-naujoks"} className="contactLink">
                         @github/luca-naujoks
                     </a>

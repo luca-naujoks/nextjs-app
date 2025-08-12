@@ -16,14 +16,14 @@ export default function RootLayout({
 
     const links: ILink[] = [
         {Link: "/", Title: "Home"},
-        {Link: "short-urls", Title: "Projects"},
+        {Link: "projects", Title: "Projects"},
         {Link: "leave-a-note", Title: "Leave a Note"}
     ]
 
     return (
         <html lang="en">
         <body
-            className={`w-screen h-screen rootBackground p-8 2xl:p-24 text-background`}
+            className={`w-screen h-screen rootBackground p-8 2xl:p-24 text-background dark`}
         >
         <div className="flex gap-4 w-full h-full backdrop-blur-[2px] bg-foreground/75 p-8 2xl:p-16 rounded-lg">
             <InfoPanel/>
