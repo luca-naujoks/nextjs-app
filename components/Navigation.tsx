@@ -6,7 +6,13 @@ export interface ILink {
     Title: string
 }
 
-export function Navigation({links}: { links: ILink[] }) {
+export function Navigation() {
+    const links: ILink[] = [
+        {Link: "/", Title: "Home"},
+        {Link: "about-me", Title: "About Me"},
+        {Link: "projects", Title: "Projects"},
+        {Link: "leave-a-note", Title: "Leave a Note"}
+    ]
 
     const path = usePathname().slice(1)
 
@@ -15,7 +21,7 @@ export function Navigation({links}: { links: ILink[] }) {
             {links.map((link, index) => (
                 <div key={index}>
                     <a href={link.Link}
-                       className={`${(path == link.Link || path == link.Link.slice(1)) ? "text-foreground font-bold underline underline-offset-4" : "text-background font-medium hover:underline underline-offset-4"}`}>{link.Title}</a>
+                       className={`${(path == link.Link || path == link.Link.slice(1)) ? "underline" : ""}`}>{link.Title}</a>
                 </div>
             ))}
         </div>
