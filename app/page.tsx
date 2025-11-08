@@ -1,35 +1,16 @@
+import Image from "next/image";
+import {Navigation} from "@/components/Navigation";
+
 export default function Home() {
     return (
-        <div className={`flex w-full h-full p-4 bg-foreground/50 rounded-md`}>
-            <div className={"border-r border-foreground p-4"}>
-                <p className="pt-4 text-xl">
-                    Hi, I am luca, a system integrator and full stack developer from Germany. <br/>
-                    <br/>
-                    My core competencies are in the area of Java/TypeScript.<br/> But I also have
-                    a broad portfolio from basic to advanced skills in Python, Java and
-                    Golang.
-                    <br/>
-                    <br/>
-                    Interests:
-                    Experiences:
-                </p>
-            </div>
-            <div className={"border-l border-foreground p-4"}>
-                <h1 className="mt-4 text-callToAction2 text-xl font-semibold">
-                    Volunteer Firefighter:
-                </h1>
-                <p className="text-xl">
-                    I am a volunteer firefighter since 2017 and mastered a good amount
-                    of calls and challenges with my team.
-                </p>
-                <h1 className="mt-4 text-callToAction2 text-xl font-semibold">
-                    Developing:
-                </h1>
-                <p>
-                    I started my career around 2019 with a friend developing Discord
-                    bots with Python, and have grown in skill and professionalism since
-                    then.
-                </p>
+        <div className={"max-w-screen max-h-screen overflow-hidden"}>
+            <div className="absolute top-0 -z-5 w-full h-full bg-gradient-to-r from-black from-40%  to-black/10 to-100%"/>
+            <Image src={"/background.jpg"} alt={""} width={1108} height={720} className="absolute top-0 -z-10 w-full h-full"/>
+            <div className={"py-8 px-16"}>
+                <Navigation/>
+                <Image src={"/avatar.png"} alt={""} width={320} height={320} className="mt-12"/>
+                <h1 className={"text-purple-700 mb-4"}>luca-naujoks</h1>
+                <p className={"text-primary-foreground w-96"}>I’m Cody—full‑stack developer focused on TypeScript, React, Node.js, golang and API design. I craft fast, accessible interfaces and resilient backends. When production’s on fire, I don’t panic—I fix.</p>
             </div>
         </div>
     );

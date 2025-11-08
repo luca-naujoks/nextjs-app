@@ -1,52 +1,40 @@
-"use client";
-import {Card, CardAction, CardContent, CardDescription, CardFooter, CardHeader, CardTitle} from "@/components/ui/card";
+import Image from "next/image";
 import {Navigation} from "@/components/Navigation";
 import {Button} from "@/components/ui/button";
-import {Avatar, AvatarFallback, AvatarImage} from "@radix-ui/react-avatar";
-import {useRouter} from "next/navigation";
-import {Badge} from "@/components/ui/badge";
 
 interface ProjectCardProps {
     name: string
     description?: string
-    link?: string
-    tags?: string[]
+    icon?: string
+    gitLink?: string
 }
+
 export default function Page() {
     return (
-        <div className={`flex flex-col px-16`}>
-            <h2 className={`w-full mb-4`}>My and Contributed Projects</h2>
-            <div className={`grid grid-cols-3 gap-4 h-full w-full overflow-y-auto`}>
-                <ProjectCard name={"test"} tags={["ts", "js", "react"]} description={"lorem impus asd asdd dsa  asd  das  asd  dsa  asd  das"} />
-                <ProjectCard name={"test"}/>
-                <ProjectCard name={"test"}/>
-                <ProjectCard name={"test"}/>
-                <ProjectCard name={"test"}/>
+            <div className={"w-full py-8 px-16"}>
+                <Navigation/>
+                <h1 className={"text-purple-700 mb-4"}>My Competencies</h1>
+                <div className={"grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8"}>
+                    <ProjectCard name={"AniStack"} icon={"https://images.bobby68.de/website-icon.png"} description={"AniStack is a Content Manager aiming at Anime and Series. It utilizes Docker to Control and Manage Dynamic Downloaders that are packed into Docker Images Provided by the User."} />
+                    <ProjectCard name={"Personal Website"} icon={"https://images.bobby68.de/website-icon.png"} description={"This is a simple small Project to deliver a fast Website through Next.js 16. To be more precise its this Website :)"}/>
+                    <ProjectCard name={"GitHub Release Notifyer"} icon={""} description={"A GitHub Notification Service to track GitHub Releases and Sendout Notifications"}/>
+                    <ProjectCard name={"AniStack Documentation"} icon={"/documentation.png"} description={"AniStack Documentation Site to guide you through Usage and Contribution"}/>
+                </div>
             </div>
-        </div>
     );
 }
 
 function ProjectCard(props: ProjectCardProps) {
-    const router = useRouter();
 return (
-    <Card className={`flex justify-between w-full h-fit`}>
-        <CardHeader className={`flex`}>
-            <Avatar className={`size-8`}>
-                <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
-                <AvatarFallback>CN</AvatarFallback>
-            </Avatar>
-            <div>
-            <CardTitle>{props.name}</CardTitle>
-                <CardDescription className={`flex gap-1`}>{props.tags?.map((tag) => (<Badge key={tag} variant={"outline"}>{tag}</Badge>))}</CardDescription>
+    <div className={"flex w-full h-64 bg-neutral-800 rounded-lg p-4"}>
+        {props.icon ? <Image src={props.icon} alt={""} width={128} height={128} className={"w-16 h-16 hidden lg:block"}/> : <div className="w-16 h-16 hidden lg:block"/>}
+        <div className={"flex flex-col w-full ml-4"}>
+            <h2 className={"text-xl text-primary-foreground mb-2"}>{props.name}</h2>
+            <p className={"flex flex-1 text-neutral-400"}>{props.description}</p>
+            <div className={"flex w-full items-end justify-end"}>
+                <Button variant="textOnly" className={"text-neutral-400"}>GitHub Repository</Button>
             </div>
-        </CardHeader>
-        <CardContent>
-            {props.description}
-        </CardContent>
-        <CardFooter className={`flex w-full justify-end`}>
-            <Button onClick={() => router.push(props.link?? "")}>Visit on GitHub</Button>
-        </CardFooter>
-    </Card>
+        </div>
+    </div>
 )
 }

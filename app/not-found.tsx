@@ -5,8 +5,8 @@ export default function NotFound() {
     const path = usePathname().slice(1)
 
     return (
-        <div className={`flex items-center justify-center w-full h-full bg-foreground/50`}>
-           <h1 className={`text-center`}> Sorry the current Selected Service<br/> at {path} is not Reachable</h1>
+        <div className={`flex items-center justify-center w-full h-full`}>
+           <h1 className={`text-center text-primary-foreground`}> Sorry the current Selected Service<br/> at &#34;{path}&#34; is not Reachable</h1>
         </div>
     )
 }
