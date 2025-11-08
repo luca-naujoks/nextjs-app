@@ -22,7 +22,7 @@ export function Navigation() {
             {links.map((link, index) => (
                 <div key={index}>
                     <a href={link.Link} target={link.External ? "_blank" : "_self"}
-                       className={`${(path == link.Link || path == link.Link.slice(1)) ? "text-purple-700 font-semibold" : ""} text-lg`}>{link.Title}
+                       className={`${(path == link.Link || path == link.Link.slice(1)) ? "text-[#6750a4]" : ""} text-lg`}>{link.Title}
                     </a>
                 </div>
             ))}
