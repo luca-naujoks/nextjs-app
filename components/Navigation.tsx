@@ -1,27 +1,31 @@
-"use client";
+"use client"
+import {usePathname} from "next/navigation";
 
-import { usePathname } from "next/navigation";
-
-export interface Ilink {
-  label: string;
-  to: string;
+export interface ILink {
+    Link: string
+    Title: string
+    External?: boolean
 }
-export function Navigation({ links }: { links: Ilink[] }) {
-  const path = usePathname();
 
-  return (
-    <div className="flex justify-center w-full mt-4 mb-4">
-      <div className="flex justify-between w-2/3 px-4 py-2 shadow-lg shadow-effect/75 rounded-lg">
-        {links.map((link) => (
-          <a
-            key={link.to}
-            href={link.to}
-            className={path == link.to ? "text-white" : "text-text"}
-          >
-            {link.label}
-          </a>
-        ))}
-      </div>
-    </div>
-  );
+export function Navigation() {
+    const links: ILink[] = [
+        {Link: "/", Title: "Home"},
+        {Link: "competencies", Title: "My Competencies"},
+        {Link: "projects", Title: "Projects"},
+        {Link: "https://uptime.luca-naujoks.de/status/monitoring", Title: "Status", External: true},
+    ]
+
+    const path = usePathname().slice(1)
+
+    return (
+        <div className={`flex gap-4 items-center justify-center lg:justify-end w-full text-primary-foreground`}>
+            {links.map((link, index) => (
+                <div key={index}>
+                    <a href={link.Link} target={link.External ? "_blank" : "_self"}
+                       className={`${(path == link.Link || path == link.Link.slice(1)) ? "text-[#6750a4]" : ""} text-lg`}>{link.Title}
+                    </a>
+                </div>
+            ))}
+        </div>
+    )
 }
