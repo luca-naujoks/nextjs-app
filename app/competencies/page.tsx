@@ -6,8 +6,8 @@ export default function page() {
         <div className="relative min-h-screen">
             <div
                 className="absolute top-0 -z-5 w-screen h-screen bg-gradient-to-l from-black from-40%  to-black/10 to-100%"/>
-            <Image src={"/background_competencies.png"} alt={""} width={3500} height={2480}
-                   className="absolute top-0 -z-10 w-full h-full"/>
+            <Image src={"/background_competencies.png"} alt={""} width={3500} height={2480} loading={"eager"}
+                   fetchPriority={"high"} className="absolute top-0 -z-10 w-full h-full"/>
             <div className={"flex flex-col w-full min-h-screen py-4 px-4 md:py-8 md:px-16"}>
                 <Navigation/>
                 <div className={'flex flex-col md:flex-row flex-grow mt-8'}>
@@ -25,7 +25,7 @@ export default function page() {
                         <CompetenciesBlock entries={["PostgreSQL", "SQLite", "MongoDB"]}/>
                         <CompetenciesBlock entries={["TypeScript", "GoLang", "Python"]}/>
                         <CompetenciesBlock entries={["Gin", "Next.js", "TailwindCSS", "React"]}/>
-                        <CompetenciesBlock entries={["MacOS", "Proxmox", "Ubuntu", "Docker"]}/>
+                        <CompetenciesBlock entries={["MacOS", "Ubuntu", "Proxmox", "Docker"]}/>
                     </div>
                 </div>
             </div>
