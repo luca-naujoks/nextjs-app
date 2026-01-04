@@ -1,6 +1,7 @@
 name: Create and Publish docker image
 
 on:
+  workflow_dispatch:
   pull_request:
     branches: ["production"]
 
