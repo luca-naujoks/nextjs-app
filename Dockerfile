@@ -40,6 +40,9 @@ ENV GIN_MODE=release
 
 WORKDIR /app
 
+# Copy CA certificates from builder stage
+COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
+
 # Copy GO Binary
 COPY --from=builder /app/main .
 

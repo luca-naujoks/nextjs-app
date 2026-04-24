@@ -41,8 +41,15 @@ func parseProjects() ([]IProject, error) {
 	var projects []IProject
 
 	client := &http.Client{}
-	req, _ := http.NewRequest("GET", baseURL, nil)
-	resp, _ := client.Do(req)
+	req, err := http.NewRequest("GET", baseURL, nil)
+	if err != nil {
+		return projects, err
+	}
+
+	resp, err := client.Do(req)
+	if err != nil {
+		return projects, err
+	}
 	defer func(Body io.ReadCloser) {
 		err := Body.Close()
 		if err != nil {
