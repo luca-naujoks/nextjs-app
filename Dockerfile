@@ -1,30 +1,50 @@
-# Stage 1: Install dependencies
-FROM oven/bun:1-alpine AS deps
-WORKDIR /app
-COPY package.json bun.lockb* ./
-RUN bun install --frozen-lockfile
+# stage 1: build frontend to single index.html
+FROM oven/bun AS frontend
 
-# Stage 2: Build the application
-FROM oven/bun:1-alpine AS builder
 WORKDIR /app
-COPY --from=deps /app/node_modules ./node_modules
-COPY . .
-ENV NEXT_TELEMETRY_DISABLED=1
+
+# Copy package.json and bun.lock
+COPY web-app/package.json web-app/bun.lock ./
+
+# Install dependencies#
+RUN bun install
+
+# Copy the frontend
+COPY web-app /app/
+
+# Build frontend
 RUN bun run build
 
-# Stage 3: Production (Distroless)
-FROM oven/bun:distroless AS runner
+# stage 2: Build GO binary
+FROM golang:1.26-alpine AS builder
+
 WORKDIR /app
 
-ENV NODE_ENV=production
-ENV NEXT_TELEMETRY_DISABLED=1
-ENV PORT=3000
-ENV HOSTNAME="0.0.0.0"
+COPY go.mod go.sum* ./
 
-COPY --from=builder /app/.next/standalone ./
-COPY --from=builder /app/.next/static ./.next/static
-COPY --from=builder /app/public ./public
+RUN go mod download
 
-EXPOSE 3000
+# Copy frontend build files
+COPY --from=frontend /app/dist /app/web-app/dist
 
-CMD ["./server.js"]
+# Copy go source files
+COPY *.go .
+COPY internal ./internal
+
+RUN CGO_ENABLED=0 go build -ldflags="-s -w" -o main .
+
+# stage 3: build minimal run image
+FROM scratch
+
+ENV GIN_MODE=release
+
+WORKDIR /app
+
+# Copy GO Binary
+COPY --from=builder /app/main .
+
+# Expose Port
+EXPOSE 6060
+
+# Command to run Application
+ENTRYPOINT ["./main"]
