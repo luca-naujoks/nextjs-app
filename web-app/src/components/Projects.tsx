@@ -2,7 +2,7 @@ import background from "../assets/backgrounds/subtle-prism.svg"
 
 // Icon Imports
 import {BackgroundImage} from "./BackgroundImage.tsx";
-import {useEffect, useState} from "react";
+import {useCallback, useEffect, useState} from "react";
 
 interface Project {
     name: string
@@ -15,15 +15,14 @@ interface Project {
 export function Projects() {
     const [projects, setProjects] = useState<Project[]>([])
 
-    async function fetchProjects(): Promise<void> {
+    const projectFetcher = useCallback(async (): Promise<Project[]> => {
         const response = await fetch("/api/projects", {method: "GET"})
-        const data = await response.json()
-        setProjects(data)
-    }
+        return await response.json()
+    }, [])
 
     useEffect(() => {
-        fetchProjects().then()
-    }, []);
+        projectFetcher().then((projects: Project[]) => setProjects(projects))
+    }, [projectFetcher]);
 
     return (
         <div>
@@ -43,12 +42,16 @@ export function Projects() {
 
 function ProjectCard(props: Project) {
     return (
-        <div className={"flex w-full h-64 bg-neutral-800 border-2 border-neutral-700 rounded-lg p-4"}>
+        <div className={"flex w-full h-64 bg-neutral-800/75 border-2 border-neutral-700 p-4 rounded-xs"}>
             <div className={"flex flex-col w-full ml-4"}>
-                <h2 className={"mb-2"}>{props.name}</h2>
+                <div id={"header"} className={"flex justify-between"}>
+                    <h2 className={"mb-2"}>{props.name}</h2>
+                    <span className={props.archived ? "h-fit px-2 bg-yellow-700/50 text-yellow-600 rounded-sm cursor-default" : "hidden"}>Archived</span>
+                </div>
                 <span className={"flex flex-1 text-base text-neutral-400"}>{props.description}</span>
                 <div className={"flex w-full items-end justify-end"}>
-                    <a href={props.git_link} target={"_blank"} className={"text-neutral-400 hover:text-neutral-500"}>GitHub Repository</a>
+                    <a href={props.git_link} target={"_blank"} className={"text-neutral-400 hover:text-neutral-500"}>GitHub
+                        Repository</a>
                 </div>
             </div>
         </div>
