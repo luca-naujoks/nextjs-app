@@ -10,14 +10,16 @@ import (
 	"personal-app/internal/github"
 	"strings"
 
+	"github.com/gin-gonic/contrib/gzip"
 	"github.com/gin-gonic/gin"
 )
 
-//go:embed web-app/dist
+//go:embed web-app-solid/dist
 var embeddedContent embed.FS
 
 func main() {
 	router := gin.Default()
+	router.Use(gzip.Gzip(gzip.DefaultCompression))
 
 	api := router.Group("/api")
 	{
@@ -32,26 +34,35 @@ func main() {
 		})
 	}
 
-	_, err := os.Stat("web-app/dist")
+	_, err := os.Stat("web-app-solid/dist")
 	if err == nil {
 		fmt.Println("Serving frontend files from local source")
-		router.Static("/assets", "web-app/dist/assets")
+		router.Static("/assets", "web-app-solid/dist/assets")
 		router.GET("/", func(c *gin.Context) {
-			c.File("web-app/dist/index.html")
+			c.File("web-app-solid/dist/index.html")
 		})
 		router.GET("/projects", func(c *gin.Context) {
-			c.File("web-app/dist/index.html")
+			c.File("web-app-solid/dist/index.html")
 		})
 		router.GET("/competencies", func(c *gin.Context) {
-			c.File("web-app/dist/index.html")
+			c.File("web-app-solid/dist/index.html")
 		})
-		router.GET("/favicon.ico", func(c *gin.Context) {
-			c.File("web-app/dist/favicon.ico")
+		router.NoRoute(func(c *gin.Context) {
+			c.File("web-app-solid/dist/index.html")
+		})
+		router.GET("/favicon.svg", func(c *gin.Context) {
+			c.File("web-app-solid/dist/favicon.svg")
+		})
+		router.GET("/robots.txt", func(c *gin.Context) {
+			c.File("web-app-solid/dist/assets/robots.txt")
 		})
 	} else {
 		fmt.Println("Serving frontend files from embedded source")
-		router.GET("/favicon.ico", func(c *gin.Context) {
-			ServeEmbeddedFile(c, "", "favicon.ico")
+		router.GET("/favicon.svg", func(c *gin.Context) {
+			ServeEmbeddedFile(c, "", "favicon.svg")
+		})
+		router.GET("/robots.txt", func(c *gin.Context) {
+			ServeEmbeddedFile(c, "", "assets/robots.txt")
 		})
 		router.GET("/assets/*filepath", func(c *gin.Context) {
 			assetPath := c.Param("filepath")
@@ -65,6 +76,9 @@ func main() {
 			ServeEmbeddedFile(c, "", "index.html")
 		})
 		router.GET("/competencies", func(c *gin.Context) {
+			ServeEmbeddedFile(c, "", "index.html")
+		})
+		router.NoRoute(func(c *gin.Context) {
 			ServeEmbeddedFile(c, "", "index.html")
 		})
 	}
@@ -84,7 +98,7 @@ func ServeEmbeddedFile(c *gin.Context, prefix string, filepath string) {
 	}
 
 	// Try to open the file from our embedded filesystem
-	fullPath := path.Join("web-app/dist", prefix, filepath)
+	fullPath := path.Join("web-app-solid/dist", prefix, filepath)
 	f, err := embeddedContent.Open(fullPath)
 	if err != nil {
 		// If file not found, serve 404
