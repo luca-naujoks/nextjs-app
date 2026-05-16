@@ -1,10 +1,10 @@
 import background from "../assets/backgrounds/slanted-gradient.svg"
 import avatar from "../assets/avatar/casual.webp"
+import avatarAVIF from "../assets/avatar/casual.avif"
 
 import {BackgroundImage} from "../components/BackgroundImage";
 
 export default function Home() {
-
     return (
         <div class={"relative max-w-screen max-h-screen overflow-hidden"}>
             <div
@@ -12,7 +12,12 @@ export default function Home() {
             <BackgroundImage src={background}/>
             <div class={"relative z-10 h-screen py-4 px-4 md:py-8 md:px-16"}>
                 <div class={"flex flex-col justify-center h-full"}>
-                    <img src={avatar} alt={""} width={320} height={320} class="mt-0 lg:mt-12"/>
+                    <picture>
+                        <source srcset={avatarAVIF} type={"image/avif"}/>
+                        <source srcset={avatar} type={"image/webp"}/>
+
+                        <img src={avatar} alt={"casual avatar"} width={320} height={320} class="mt-0 lg:mt-12"/>
+                    </picture>
                     <h1 class={"mb-4"}>luca-naujoks</h1>
                     <p class={"w-full lg:w-1/2 xl:1/4"}>
                         I’m luca a <span class={"highlight"}>full‑stack</span> developer focused around

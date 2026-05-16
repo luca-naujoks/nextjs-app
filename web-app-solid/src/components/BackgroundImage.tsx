@@ -3,7 +3,6 @@ export function BackgroundImage({src}: { src: string }) {
         <img src={src}
              alt={"background Image"}
              role={"presentation"}
-             loading={"eager"}
              fetchpriority={"high"}
              class="absolute top-0 left-0 z-0 w-screen h-dvh object-cover"/>
     )

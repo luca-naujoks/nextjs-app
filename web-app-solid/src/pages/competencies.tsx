@@ -1,6 +1,7 @@
 import background from "../assets/backgrounds/circuit-board.svg"
 import avatar from "../assets/avatar/firefighter.webp"
 import {BackgroundImage} from "../components/BackgroundImage";
+import avatarAVIF from "../assets/avatar/firefighter.avif";
 
 export default function Competencies() {
     return (
@@ -11,13 +12,12 @@ export default function Competencies() {
             <div class={"relative z-10 flex flex-col w-full min-h-screen py-4 px-4 md:py-8 md:px-16"}>
                 <div class={'flex flex-col md:flex-row grow mt-8'}>
                     <div class={"w-full md:w-1/2 flex items-end pb-8"}>
-                        <img
-                            src={avatar}
-                            alt={"firefighter avatar"}
-                            width={320}
-                            height={320}
-                            class=""
-                        />
+                        <picture>
+                            <source srcset={avatarAVIF} type={"image/avif"}/>
+                            <source srcset={avatar} type={"image/webp"}/>
+
+                            <img src={avatar} alt={"firefighter avatar"} width={320} height={320} class="mt-0 lg:mt-12"/>
+                        </picture>
                     </div>
                     <div class={"flex flex-col gap-4 w-full md:w-1/2 justify-center items-end pb-8"}>
                         <h1 class={"mb-2"}>My Competencies</h1>
