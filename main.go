@@ -53,6 +53,9 @@ func main() {
 		router.GET("/favicon.svg", func(c *gin.Context) {
 			c.File("web-app-solid/dist/favicon.svg")
 		})
+		router.GET("/apple-touch-icon.png", func(c *gin.Context) {
+			c.File("web-app-solid/dist/apple-touch-icon.png")
+		})
 		router.GET("/robots.txt", func(c *gin.Context) {
 			c.File("web-app-solid/dist/assets/robots.txt")
 		})
@@ -60,6 +63,9 @@ func main() {
 		fmt.Println("Serving frontend files from embedded source")
 		router.GET("/favicon.svg", func(c *gin.Context) {
 			ServeEmbeddedFile(c, "", "favicon.svg")
+		})
+		router.GET("/apple-touch-icon.png", func(c *gin.Context) {
+			ServeEmbeddedFile(c, "", "apple-touch-icon.png")
 		})
 		router.GET("/robots.txt", func(c *gin.Context) {
 			ServeEmbeddedFile(c, "", "assets/robots.txt")

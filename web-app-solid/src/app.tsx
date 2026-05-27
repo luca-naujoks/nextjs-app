@@ -2,7 +2,7 @@ import {type Component, JSX, Suspense} from 'solid-js';
 import {A, useLocation} from '@solidjs/router';
 
 const App: Component<{ children?: JSX.Element }> = (props) => {
-    const location = useLocation().pathname;
+    const location = useLocation();
 
     const Nav: { href: string, displayName: string }[] = [
         {href: "/", displayName: "Home"},
@@ -11,12 +11,12 @@ const App: Component<{ children?: JSX.Element }> = (props) => {
     ]
 
     return (
-        <div class={"max-h-screen w-screen"}>
+        <div class={"max-h-screen max-w-screen overflow-hidden"}>
             <nav class="relative z-20 flex pr-4 pt-4 w-screen justify-center xl:justify-end gap-4">
                 <ul class="flex items-center">
                     {Nav.map((item) => (
                         <li class="py-2 px-4">
-                            <A href={item.href} class={location === item.href ? "link-active" : "link"}>
+                            <A href={item.href} class={location.pathname === item.href ? "link-active" : "link"}>
                                 {item.displayName}
                             </A>
                         </li>

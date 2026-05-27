@@ -6,7 +6,7 @@ import {BackgroundImage} from "../components/BackgroundImage";
 
 export default function Home() {
     return (
-        <div class={"relative max-w-screen max-h-screen overflow-hidden"}>
+        <div class={"relative w-screen h-screen overflow-hidden"}>
             <div
                 class="absolute top-0 z-5 w-full h-full bg-linear-to-r from-black from-20%  to-black/10 to-100%"/>
             <BackgroundImage src={background}/>
