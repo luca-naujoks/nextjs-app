@@ -30,11 +30,11 @@ export default function Projects() {
     })
 
     return (
-        <div class={"relative max-w-screen max-h-screen overflow-hidden"}>
+        <div class={"relative max-w-screen max-h-screen"}>
             <BackgroundImage src={background}/>
-            <div class={"relative z-10 w-full py-4 px-4 md:py-8 md:px-16 h-screen overflow-scroll"}>
+            <div class={"relative z-10 w-full px-4 md:px-16 h-screen overflow-scroll"}>
                 <h1 class={"mb-4"}>My Projects</h1>
-                <div class={"grid grid-cols-1    md:grid-cols-3 xl:grid-cols-4 gap-8 mb-8"}>
+                <div class={"grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-8 pb-16"}>
                     <p class={fetchError() ? "col-span-1 md:col-span-3 xl:col-span-4 text-center" : "hidden"}>{fetchError()}</p>
                     {projects().map((project: Project) => (
                         <ProjectCard name={project.name} description={project.description} icon={project.icon}
