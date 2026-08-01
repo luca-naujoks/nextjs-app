@@ -4,13 +4,13 @@ FROM oven/bun AS frontend
 WORKDIR /app
 
 # Copy package.json and bun.lock
-COPY web-app-solid/package.json web-app-solid/bun.lock ./
+COPY web-app/package.json web-app/bun.lock ./
 
 # Install dependencies#
 RUN bun install
 
 # Copy the frontend
-COPY web-app-solid /app/
+COPY web-app /app/
 
 # Build frontend
 RUN bun run build
@@ -25,7 +25,7 @@ COPY go.mod go.sum* ./
 RUN go mod download
 
 # Copy frontend build files
-COPY --from=frontend /app/dist /app/web-app-solid/dist
+COPY --from=frontend /app/dist /app/web-app/dist
 
 # Copy go source files
 COPY *.go .
