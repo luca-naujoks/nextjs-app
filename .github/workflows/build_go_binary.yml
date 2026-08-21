@@ -1,0 +1,4 @@
+name: build_go_binary.yml
+on:
+
+jobs:

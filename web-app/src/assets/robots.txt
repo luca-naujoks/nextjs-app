@@ -1,4 +1,3 @@
 User-agent: *
-Allow: /competencies
 Allow: /projects
 Allow: /
