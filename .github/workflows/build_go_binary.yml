@@ -2,6 +2,7 @@ name: build_go_binary.yml
 
 on:
   pull_request:
+  workflow_dispatch:
 
 jobs:
   test:
