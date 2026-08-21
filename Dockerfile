@@ -47,7 +47,7 @@ COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 COPY --from=builder /app/main .
 
 # Expose Port
-EXPOSE 6060
+EXPOSE 80
 
 # Command to run Application
 ENTRYPOINT ["./main"]
