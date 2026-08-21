@@ -2,16 +2,17 @@ package server
 
 import (
 	"embed"
+	"fmt"
 	"net/http"
 )
 
 type Server struct {
-	addr    string
+	addr    int
 	mux     *http.ServeMux
 	content embed.FS
 }
 
-func New(addr string, content embed.FS) *Server {
+func New(addr int, content embed.FS) *Server {
 	s := &Server{
 		addr:    addr,
 		mux:     http.NewServeMux(),
@@ -29,5 +30,5 @@ func (s *Server) registerRoutes() {
 
 func (s *Server) Run() error {
 	handler := GzipMiddleware(s.mux)
-	return http.ListenAndServe(s.addr, handler)
+	return http.ListenAndServe(fmt.Sprintf(":%v", s.addr), handler)
 }

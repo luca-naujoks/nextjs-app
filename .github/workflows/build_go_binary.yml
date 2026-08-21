@@ -1,4 +1,26 @@
 name: build_go_binary.yml
+
 on:
+  pull_request:
 
 jobs:
+  test:
+    name: Run tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Install dependencies
+        working-directory: web-app
+        run: npm ci
+
+      - name: Run tests
+        working-directory: web-app
+        run: npm build
+
+      - uses: actions/setup-go@v7
+        with:
+          go-version-file: go.mod
+          go-version: 1.26
+          cache: 'true'
