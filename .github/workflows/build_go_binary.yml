@@ -30,3 +30,6 @@ jobs:
           go-version-file: go.mod
           go-version: 1.26
           cache: 'true'
+
+      - name: Build go Binary
+        run: go build -ldflags="-s -w" -o personal-app .
